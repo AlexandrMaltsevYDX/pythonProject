@@ -1,0 +1,24 @@
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+uvicorn = {extras = ["standard"], version = "^0.30.1"}
+pydantic = {extras = ["email"], version = "^2.7.4"}
+pydantic-settings = "^2.3.4"
+
+
+[tool.ruff]
+select = ["E", "F", "B", "Q", "T", "N", "UP", "W", "C90", "COM", "PYI", "RSE", "RET", "SIM", "TID", "TCH", "ARG", "PT",
+    "PTH", "ERA", "PGH", "PL", "TRY", "RUF", "ANN", "S", "BLE", "C4", "PIE",
+    # "D" – будет требовать docstrings для публичных классов, методов и функций
+    # "INP" – будет сообщать, что модуль расположен в каталоге, где нет init.py. — Спорно...
+    # "G" – запретит использовать форматирование в при логгинге
+    # "DTZ" – утомит требованиями таймзоны при манипуляциях с дататми
+]
+line-length = 80
+ignore = ["RUF001", "RUF003", "D203", "D213", "ANN101", "ANN102", "ANN401", "S101", "PLR2004"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
