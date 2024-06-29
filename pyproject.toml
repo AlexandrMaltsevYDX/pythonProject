@@ -7,7 +7,7 @@ fastapi = "^0.111.0"
 uvicorn = { extras = ["standard"], version = "^0.30.1" }
 pydantic = { extras = ["email"], version = "^2.7.4" }
 pydantic-settings = "^2.3.4"
-sqlalchemy = {extras = ["asyncio"], version = "^2.0.31"}
+sqlalchemy = { extras = ["asyncio"], version = "^2.0.31" }
 asyncpg = "^0.29.0"
 
 
@@ -26,6 +26,8 @@ exclude = ["migrations"]
 
 [tool.ruff.format]
 quote-style = "single"
+skip-magic-trailing-comma = true
+
 
 [tool.ruff.lint.flake8-quotes]
 inline-quotes = "single"
