@@ -6,7 +6,9 @@ from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
-from core.db.model import Base
+# from apps import app_users  # noqa: ERA001
+import apps  # noqa: F401
+from core.db import Base
 from core.settings import settings
 
 # this is the Alembic Config object, which provides
