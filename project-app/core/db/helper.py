@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import (
 from core.settings import settings
 
 
+# !todo rename to SessionManager
 class DatabaseHelper:
     def __init__(  # noqa: PLR0913
         self,

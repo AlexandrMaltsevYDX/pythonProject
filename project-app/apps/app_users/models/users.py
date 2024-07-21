@@ -1,4 +1,3 @@
-from sqlalchemy import UniqueConstraint
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
@@ -10,4 +9,4 @@ class User(Base):
     foo: Mapped[int]
     bar: Mapped[int]
 
-    __table_args__ = (UniqueConstraint('foo', 'bar'),)
+    # __table_args__ = (UniqueConstraint('foo', 'bar'),)  # noqa: ERA001
