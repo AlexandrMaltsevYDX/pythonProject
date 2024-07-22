@@ -18,7 +18,6 @@ class UserRead(UserBase):
     )
 
     id: int
-    username: str
 
 
 # class UserRead(UserBase):
