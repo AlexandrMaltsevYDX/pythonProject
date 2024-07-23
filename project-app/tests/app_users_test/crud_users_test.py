@@ -1,9 +1,7 @@
 import pytest
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from apps.app_users.crud import create_user
-from apps.app_users.models import User
 from apps.app_users.schemas import UserCreate
 
 
@@ -24,8 +22,4 @@ async def test_create_user(
     )
 
     user = await create_user(db_session, data)
-    db_session.commit()
-    result = await db_session.execute(select(User).filter_by(id=user.id))
-    user = result.scalar()
-    assert user.id
-    await db_session.commit()
+    assert user.username == 'Bob'

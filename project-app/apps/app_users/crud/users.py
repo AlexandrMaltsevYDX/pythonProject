@@ -18,8 +18,9 @@ async def get_all_users(
 async def create_user(
     session: AsyncSession,
     user_create: UserCreate,
-) -> User:
+) -> UserCreate:
     user = User(**user_create.model_dump())
     session.add(user)
-    # await session.commit()
+    user = UserCreate(username=user.username, foo=user.foo, bar=user.bar)
+    await session.commit()
     return user
